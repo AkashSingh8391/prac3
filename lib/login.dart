@@ -1,5 +1,4 @@
 import'package:flutter/material.dart';
-import 'package:prac3/prc1.dart';
 import 'package:prac3/routes.dart';
 
 void main(){
@@ -15,7 +14,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String name="";
   bool changeButton=false;
-
   final _formKey=GlobalKey<FormState>();
   moveToHome(BuildContext context)
     async{
@@ -28,8 +26,8 @@ class _LoginPageState extends State<LoginPage> {
         changeButton=true;
 
       });
-      await Future.delayed(Duration(seconds:6));
-      await Navigator.pushNamed(context,MyRoutes.homeRoutes);
+      await Future.delayed(const Duration(seconds:6));
+      await Navigator.pushNamed(BuildContext as BuildContext,MyRoutes.homeRoutes);
       setState(() {
         changeButton=false;
       });
@@ -55,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                Text('Welcome $name',style: TextStyle(
+                Text('Welcome $name',style: const TextStyle(
                     fontSize: 24,
                 fontWeight: FontWeight.w100),
                 ),
@@ -67,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Enter UserName",
                           labelText: "UserName",
                         ),
@@ -86,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       TextFormField(
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Enter Password",
                           labelText: "Password",
                       ),
@@ -94,13 +92,13 @@ class _LoginPageState extends State<LoginPage> {
                           if(value!.isEmpty){
                             return "Password can't be empty";
                           }
-                          else if(value!.length >6){
+                          else if(value.length >6){
                             return "Password length is less than 6";
                           }
                           return null;
                         },
                       ),
-                      SizedBox(height: 20.0,),
+                      const SizedBox(height: 20.0,),
                     Material(
                         borderRadius: BorderRadius.circular(changeButton?20:8),
                         color: Colors.purple,
@@ -110,12 +108,12 @@ class _LoginPageState extends State<LoginPage> {
 
                         onTap: ()=>moveToHome(context),
                         child: AnimatedContainer(
-                          duration: Duration(seconds: 5),
+                          duration: const Duration(seconds: 5),
                           alignment: Alignment.center,
                           height: 40,
                           width: changeButton?40:110,
 
-                          child: changeButton?Icon(Icons.done,color: Colors.white,):Text("login",
+                          child: changeButton?const Icon(Icons.done,color: Colors.white,):const Text("login",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,

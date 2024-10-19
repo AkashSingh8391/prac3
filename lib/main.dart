@@ -6,7 +6,7 @@ import 'package:prac3/routes.dart';
 
 
 void main(){
-  runApp(App());
+  runApp(const App());
 }
 class App extends StatelessWidget {
   const App({super.key});
@@ -17,8 +17,8 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       routes: {
-        "/":(context)=>LoginPage(),
-        MyRoutes.homeRoutes:(context)=>MyApp(),
+        "/":(context)=>const LoginPage(),
+        MyRoutes.homeRoutes:(context)=>const MyApp(),
       },
 
     );

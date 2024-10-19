@@ -13,17 +13,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.light,
       darkTheme: ThemeData(
+        appBarTheme:const AppBarTheme(color: Colors.white,),
         brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
       home:Scaffold(
-        drawer: MyDrawer(),
-        appBar: AppBar(title: const Text('My AppBar'),centerTitle: true,),
+        drawer: const MyDrawer(),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 10,
+          title: const Text(
+              'My AppBar'),
+          centerTitle: true,),
         body: Material(
         child: Center(
-          child: Container(
-            child: Text('My $days days of code'),
-        ),
+          child: Text('My $days days of code'),
     ),
       )
     )
